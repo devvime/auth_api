@@ -1,3 +1,4 @@
+import json, os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.controller.user_controller import router as UserController
@@ -5,10 +6,7 @@ from app.controller.auth_controller import router as AuthController
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:4200",
-    "https://app.com",
-]
+origins = json.loads(os.getenv("ORIGINS", "[]"))
 
 app.add_middleware(
     CORSMiddleware,
