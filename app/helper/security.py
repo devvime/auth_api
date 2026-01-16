@@ -10,8 +10,6 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_DAYS = 7
 REFRESH_TOKEN_EXPIRE_DAYS = 7
 
-GOOGLE_CLIENT_ID = config("GOOGLE_CLIENT_ID")
-
 security = HTTPBearer()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 

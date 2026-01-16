@@ -6,10 +6,8 @@ __pycache__/
 venv/
 migrations/
 alembic.ini
-.env
 .env.example
 tests/
-postgres_data
 docker-compose.yml
 README.md
 start.sh
