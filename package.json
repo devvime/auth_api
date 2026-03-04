@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"webpack --mode development --watch\" \"sass --watch client/scss:static/app\"",
+    "build": "concurrently \"webpack --mode production\" \"sass client/scss:static/app --no-source-map --style=compressed\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "sass": "^1.97.2",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
