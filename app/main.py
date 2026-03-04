@@ -1,14 +1,30 @@
 import json, os
+import redis.asyncio as redis
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi_limiter import FastAPILimiter
+from contextlib import asynccontextmanager
 
 from app.controller.view_controller import router as ViewController
 from app.controller.user_controller import router as UserController
 from app.controller.auth_controller import router as AuthController
 
-app = FastAPI()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    r = redis.from_url(
+        "redis://localhost:6379",
+        encoding="utf8",
+        decode_responses=True
+    )
+    await FastAPILimiter.init(r)
+    yield
+
+
+app = FastAPI(lifespan=lifespan)
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.add_middleware(

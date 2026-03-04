@@ -20,3 +20,5 @@ python-dotenv
 requests
 email_validator
 jinja2
+fastapi-limiter==0.1.6
+redis
