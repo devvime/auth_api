@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from app.domain.user.schemas.create_user_schema import CreateUserSchema
-from app.helper.security import hash_password
+from app.infra.helper.security import hash_password
 from app.provider.user_repository import UserRepository
 
 class CreateUser:

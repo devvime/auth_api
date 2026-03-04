@@ -1,6 +1,6 @@
 from jose import jwt, JWTError
 from fastapi import HTTPException, status
-from app.helper.security import decode_token, create_access_token, create_refresh_token
+from app.infra.helper.security import decode_token, create_access_token, create_refresh_token
 from app.provider.user_repository import UserRepository
 
 class RefreshTokenUseCase:

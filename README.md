@@ -5,26 +5,42 @@ Duplicate the **.env.example** file and rename the copy to **.env**.
 ### Create a virtual environment and install the dependencies.
 
 ```bash
-./install.sh
+./pipu.sh install
 ```
 ---
 
 ### Create migration
 
 ```bash
-./migrate.sh create "add table table_name"
+./pipu.sh migrate create "add table table_name"
 ```
 
 ### Run migrations
 
 ```bash
-./migrate.sh apply
+./pipu.sh migrate apply
 ```
 
 ### Revert the last migration.
 
 ```bash
-./migrate.sh rollback
+./pipu.sh migrate rollback
+```
+
+---
+
+### Start dev server
+
+```bash
+./pipu.sh start
+```
+
+---
+
+### Run with Docker
+
+```bash
+docker compose up -d
 ```
 
 ---

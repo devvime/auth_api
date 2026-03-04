@@ -10,7 +10,4 @@ alembic.ini
 tests/
 docker-compose.yml
 README.md
-start.sh
-install.sh
-migrate.sh
-create_fake_data.py
+pipu.sh
