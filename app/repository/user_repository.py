@@ -1,7 +1,6 @@
 from sqlalchemy.orm import Session
-from app.infra.database.models import User
-from app.domain.user.schemas.create_user_schema import CreateUserSchema
-from app.infra.database.models import User as UserModel
+from app.shared.database.models import User
+from app.schema.user.create_user_schema import CreateUserSchema
 
 class UserRepository:
     def __init__(self, session: Session):
@@ -14,7 +13,7 @@ class UserRepository:
         return self.session.query(User).filter(User.email == email).first()
     
     def create(self, user: CreateUserSchema, hashed):
-        data = UserModel(name=user.name, email=user.email, password=hashed)
+        data = User(name=user.name, email=user.email, password=hashed)
         self.session.add(data)
         self.session.commit()
         self.session.refresh(data)

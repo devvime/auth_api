@@ -1,6 +1,6 @@
 from fastapi import HTTPException, status
-from app.infra.helper.security import verify_password, create_access_token, create_refresh_token
-from app.provider.user_repository import UserRepository
+from app.shared.helper.security import verify_password, create_access_token, create_refresh_token
+from app.repository.user_repository import UserRepository
 
 class LoginUseCase:
     def __init__(self, session):

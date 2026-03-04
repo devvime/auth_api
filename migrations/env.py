@@ -5,7 +5,7 @@ from sqlalchemy import pool
 
 from alembic import context
 from decouple import config as config_decouple
-from app.infra.database.models import Base
+from app.shared.database.models import Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

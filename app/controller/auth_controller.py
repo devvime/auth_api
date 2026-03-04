@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends
-from app.infra.database.session import get_db
+from app.shared.database.session import get_db
 from sqlalchemy.orm import Session
 
-from app.domain.auth.use_cases.login import LoginUseCase
-from app.domain.auth.use_cases.refresh import RefreshTokenUseCase
+from app.service.auth.login import LoginUseCase
+from app.service.auth.refresh import RefreshTokenUseCase
 
-from app.domain.auth.schemas.login_schema import LoginSchema
-from app.domain.auth.schemas.refresh_schema import RefreshSchema
+from app.schema.auth.login_schema import LoginSchema
+from app.schema.auth.refresh_schema import RefreshSchema
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 

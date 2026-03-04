@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime, Boolean, text
 from sqlalchemy.sql import func
-from app.infra.database.connection import Base
+from app.shared.database.connection import Base
 
 class TimestampMixin:
     created_at = Column(
